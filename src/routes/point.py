@@ -3,13 +3,12 @@ from fastapi.templating import Jinja2Templates
 
 
 
-@point_router.post("/")
-async def add_todo(request: Request, todo: Todo = Depends(Todo.as_form)):
-    """router add todo"""
-    todo.id = len(todo_list) + 1
-    todo_list.append(todo)
-    return templates.TemplateResponse("todo.html",
-                                      {
-                                          "request": request,
-                                          "todos": todo_list
-                                      })
+
+
+@point_router.get("/")
+async def retrieve_todo(request: Request):
+    """router get todo"""
+    return templates.TemplateResponse("todo.html", {
+        "request": request,
+        "todos": todo_list
+    })
