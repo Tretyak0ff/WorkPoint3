@@ -17,11 +17,7 @@ app.include_router(point_router,  prefix="/point")
 async def root() -> dict:
     """router root"""
     return RedirectResponse(url="/point/")  # type: ignore
-    # return jsonable_encoder(
-    #     {
-    #         "message": "this is the root directory"
-    #     }
-    # )
+
 
 if __name__ == '__main__':
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
