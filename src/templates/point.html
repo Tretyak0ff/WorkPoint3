@@ -51,18 +51,18 @@
 
     <script>
         const data = {
-            labels: {{ x_axis | safe }},
+            labels: {{ y_axis | safe }},
         datasets: [{
             label: 'Surge Line',
             backgroundColor: 'rgb(255, 100, 132)',
             borderColor: 'rgb(255, 100, 132)',
-            data: {{ graph_1 | safe }},
+            data: {{ line_1 | safe }},
             },
         {
             label: 'Anti Surge Line',
             backgroundColor: 'rgb(255, 205, 87)',
             borderColor: 'rgb(255, 205, 87)',
-            data: {{ graph_2 | safe }},
+            data: {{ line_2 | safe }},
             }
         ]
         };
@@ -80,8 +80,13 @@
                             reverse: true,
                             ticks: {
                                 crossAlign: 'far',
-                            }
-                        }
+                            },
+                        },
+                        x: {
+                            ticks: {
+                                stepSize: 5,
+                            },
+                        },
                     }
                 }
             }
@@ -104,8 +109,6 @@
             </div>
         </form>
     </section> -->
-
-
     <!-- {% if todo %}
     <article class="card container-fluid">
         <br/>
