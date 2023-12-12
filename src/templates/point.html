@@ -5,12 +5,10 @@
     <hr>
     <div>
         <canvas id="AntiSurgeLine"></canvas>
-        <canvas id="AntiSurgeLine2"></canvas>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
+    <!-- <script>
         const data = {
             datasets: [
                 {
@@ -49,8 +47,46 @@
                 }
             },
         );
-    </script>
+    </script> -->
 
+    <script>
+        const data = {
+            labels: {{ x_axis | safe }},
+        datasets: [{
+            label: 'Surge Line',
+            backgroundColor: 'rgb(255, 100, 132)',
+            borderColor: 'rgb(255, 100, 132)',
+            data: {{ graph_1 | safe }},
+            },
+        {
+            label: 'Anti Surge Line',
+            backgroundColor: 'rgb(255, 205, 87)',
+            borderColor: 'rgb(255, 205, 87)',
+            data: {{ graph_2 | safe }},
+            }
+        ]
+        };
+    </script>
+    <script>
+        const AntiSurgeLine = new Chart(
+            document.getElementById('AntiSurgeLine'),
+            config = {
+                type: 'line',
+                data,
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        y: {
+                            reverse: true,
+                            ticks: {
+                                crossAlign: 'far',
+                            }
+                        }
+                    }
+                }
+            }
+        );
+    </script>
 
 
     <!-- <section class="container-fluid">
