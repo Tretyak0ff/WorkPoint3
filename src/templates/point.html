@@ -8,47 +8,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script>
-        const data = {
-            datasets: [
-                {
-                    label: 'My Dataset #1',
-                    showLine: true,
-                    data: {{ graph_1 | safe }},
-                },
-                {
-                    label: 'My Dataset #2',
-                    showLine: true,
-                    data: {{ graph_2 | safe }},
-                },
-            ],
-        };
-    </script>
-    <script>
-        const AntiSurgeLine = new Chart(
-            document.getElementById('AntiSurgeLine'),
-            config = {
-                type: 'scatter',
-                data: data,
-                options: {
-                    scales: {
-                        xAxes: [
-                            {
-                                type: 'linear',
-                                position: 'bottom',
-                            },
-                        ],
-                        yAxes: [
-                            {
-                                type: 'linear',
-                            },
-                        ],
-                    }
-                }
-            },
-        );
-    </script> -->
-
     <script>
         const data = {
             labels: {{ y_axis | safe }},
