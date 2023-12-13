@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "back"
+name = "workpoint3-backend"
 version = "0.1.0"
-description = ""
+description = "Backend for app WorkPoint3"
 authors = ["Tretyak0ff <evgentretyakoff@gmail.com>"]
+license = "free"
 readme = "README.md"
 
 [tool.poetry.dependencies]
