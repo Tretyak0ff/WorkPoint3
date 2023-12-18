@@ -3,6 +3,7 @@ version: '3.9'
 services:
 
   backend:
+    container_name: fastapi
     build: ./backend
     ports:
       - 8000:8000
@@ -11,6 +12,7 @@ services:
     command: uvicorn --factory src.main:create --reload --host 0.0.0.0 --port 8000
 
   frontend:
+    container_name: vue
     build: ./frontend
     volumes:
       - './frontend:/app'
@@ -19,6 +21,7 @@ services:
       - 8080:8080
 
   database:
+    container_name: postgres
     image: postgres:15.1
     expose:
       - 5432
