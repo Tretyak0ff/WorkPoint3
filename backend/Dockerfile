@@ -14,5 +14,3 @@ RUN python -m pip install --no-cache-dir poetry==1.4.2 \
     && rm -rf $(poetry config cache-dir)/{cache,artifacts}
 
 COPY src/ .
-
-# CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
