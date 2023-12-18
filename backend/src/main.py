@@ -15,5 +15,11 @@ app.add_middleware(
 
 
 @app.get("/")
-def home():
-    return "Hello, World!"
+def home() -> dict:
+    return {
+        "message": "this is the root directory"
+    }
+
+
+# if __name__ == '__main__':
+#     run("main:app", host="0.0.0.0", port=8080, reload=True)
