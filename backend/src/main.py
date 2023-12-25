@@ -4,10 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 def create():
 
-    app = FastAPI(
-        debug=True,
-        title="#1"
-    )
+    app = FastAPI()
 
     app.add_middleware(
         CORSMiddleware,

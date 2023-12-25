@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 .vscode/
+.pgadmin/
+.postgresql/
+.postgresql_init/
 __pycache__/
 *.py[cod]
 *$py.class
