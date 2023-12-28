@@ -1,5 +1,4 @@
 from pathlib import Path
-from loguru import logger
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -46,4 +45,3 @@ settings = Settings(
     root_dir=ROOT_PATH,
     src_dir=ROOT_PATH / "",
 )
-logger.debug(settings)
